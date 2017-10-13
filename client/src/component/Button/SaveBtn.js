@@ -21,7 +21,7 @@ class SaveBtn extends Component{
             <a
             onClick={this.saveArticle}
             style={style}
-            target="#"
+            href="#/"
             className={`btn btn-${this.props.type || 'primary'}`}
             >
                 {this.props.children}

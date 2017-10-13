@@ -13,7 +13,7 @@ export default {
 
     // save article
     saveArticle: (article) => {
-        return axios.post('./api/articles/')
+        return axios.post('./api/articles/', article)
     },
 
     // find specific saved articles

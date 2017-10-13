@@ -21,6 +21,12 @@ class Saved extends Component {
             .then((articles) => this.setState({articles: articles.data}))
             .catch(err => console.log(err))
     }
+
+    deleteArticle = (id) => {
+        API.deleteOne(id)
+            .then(() => document.getElementById(id).remove())
+            .catch(err => console.log(err))
+    }   
     
     render(){
         return(
@@ -28,7 +34,9 @@ class Saved extends Component {
             {console.log(this.state.articles.length )}
             {this.state.articles.length > 0 ? 
                 <ArticleList 
-                    results={this.state.articles} 
+                    page={ "Saved" }
+                    results={ this.state.articles } 
+                    deleteArticle= { this.deleteArticle }
                 /> 
                     : 
                 "No Saved Article Found"}
